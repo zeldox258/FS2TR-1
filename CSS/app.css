@@ -137,7 +137,6 @@
     
 }
 .y-20{
-    width: 100%;
     height:20%;
     background-color: rgb(135, 12, 250);
     display: flex;
@@ -145,7 +144,6 @@
     align-items: center;
 }
 .y-30{
-    width: 100%;
     height:30%;
     background-color: rgb(35, 254, 7);
     display: flex;
@@ -153,7 +151,6 @@
     align-items: center;
 }
 .y-50{
-    width: 100%;
     height:50%;
     background-color: rgb(92, 2, 77);
     display: flex;
@@ -167,6 +164,86 @@
     justify-content: center;
     align-items: center;
 }
+
+@keyframes bounce {
+    0%,100%{transform:translateY(0);}
+    90%{transform: translateY(-50px);}
+}
+
+
+@keyframes printSquare {
+    0%,100%{transform: translateX(0) translateY(0);}
+    25%{transform: translateX(90px);}
+    50%{transform: translateX(90px) translateY(90px);}
+    75%{transform: translateY(90px) translateX(0px);}
+    
+}
+@keyframes hexagon {
+    0%,100%{transform: translateX(0) translateY(0px);}
+    15%{transform: translateX(100px);}
+    30%{transform: translateX(150px) translateY(50px);}
+    45%{transform: translateX(100px) translateY(100px);}
+    60%{transform: translateX(0px) translateY(100px);}
+    75%{transform: translateX(-50px) translateY(50px);}
+}
+@keyframes e {
+    0%,100%{transform: translateX(0) translateY(0px);}
+    8%{transform: translateX(100px) translateY(0px);}
+    16%{transform: translateX(100px) translateY(25px);}
+    24%{transform: translateX(25px) translateY(25px);}
+    32%{transform: translateX(25px) translateY(50px);}
+    40%{transform: translateX(100px) translateY(50px);}
+    48%{transform: translateX(100px) translateY(75px);}
+    56%{transform: translateX(25px) translateY(75px);}
+    64%{transform: translateX(25px) translateY(100px);}
+    72%{transform: translateX(100px) translateY(100px);}
+    80%{transform: translateX(100px) translateY(125px);}
+    88%{transform: translateX(0px) translateY(125px);}
+
+}
+@keyframes home{
+    0%,100%{transform: translate(0px)  translateY(0px);}
+    7%{transform: translateX(30px) translateY(0px);}
+    14%{transform: translateX(30px) translateY(-10px);}
+    21%{transform: translateX(40px) translateY(-10px);}
+    28%{transform: translateX(40px) translateY(0px);}
+    35%{transform: translateX(100px) translateY(0px);}
+    42%{transform: translateX(120px) translateY(20px);}
+    49%{transform: translateX(120px) translateY(120px);}
+    56%{transform: translateX(60px) translateY(120px);}
+    63%{transform: translateX(60px) translateY(100px);}
+    70%{transform: translateX(50px) translateY(100px);}
+    77%{transform: translateX(50px) translateY(120px);}
+    84%{transform: translateX(-20px) translateY(120px);}
+    91%{transform: translateX(-20px) translateY(20px);}
+}
+@keyframes k {
+    0%,100%{transform: translate(0px)  translateY(0px);}
+    10%{transform: translateX(20px) translateY(0px);}
+    20%{transform: translateX(20px) translateY(40px);}
+    30%{transform: translateX(40px) translateY(0px);}
+    40%{transform: translateX(60px) translateY(0px);}
+    50%{transform: translateX(20px) translateY(60px);}
+    60%{transform: translateX(120px) translateY(120px);}
+    70%{transform: translateX(100px) translateY(120px);}
+    80%{transform: translateX(40px) translateY(60px);}
+    90%{transform: translateX(40px) translateY(120px);}
+    95%{transform: translateX(00px) translateY(120px);}
+}
+.y-20:hover{
+    animation: k 10s ease-in-out infinite;
+}
+.x-80:hover{
+    animation: home 10s infinite;    
+}
+.x-40:hover{
+    background-color: white;
+    font-size: 100px;
+
+    transform: rotate(360deg) ;/*translateX(50px) translateY(50px)*/
+    transition: transform 2s,font-size 2s, background-color 2s;
+
+}
 .x-50{
     width: 50%;
     background-color: rgb(220,20,30);
@@ -174,12 +251,23 @@
     justify-content: center;
     align-items: center;
 }
+
+.x-50:hover{
+    animation: bounce 1s infinite;
+}
 .x-10{
     width: 10%;
     background-color: rgb(151, 233, 20);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.x-10:hover{
+    animation: printSquare 3s 5;
+}
+.x-15:hover{
+    animation: hexagon 6s infinite;
 }
 .x-80{
     width: 80%;
@@ -195,6 +283,10 @@
     justify-content: center;
     align-items: center;
 }
+
+.x-5:hover{
+    animation: e 10s linear infinite;
+}
 .x-15{
     width: 15%;
     background-color: rgb(220, 197, 197);
@@ -202,7 +294,6 @@
     justify-content: center;
     align-items: center;
 }
-
 
 .main-container{
     width: 500px;
@@ -221,6 +312,7 @@
 .cell {
     width: 20%;
     height: 100%;
+    background-color: red;
 }
 
 .bg-black {
