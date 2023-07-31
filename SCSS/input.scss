@@ -1,0 +1,189 @@
+/*
+
+npm install -g sass
+sass input.scss output.css
+sass --watch input.scss:output.css
+
+*/
+
+
+@use "sass:math";
+@import 'values';
+
+
+@mixin flexBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+
+
+.a{
+    background-color: red;
+    color:$abdullahColor;
+}
+
+.b{
+    @include flexBox;
+    /*c class*/
+    .c{
+        display: block;
+        .aa{
+            display: contents;
+            &:hover{
+                display: flow-root;
+            }
+        }
+        .aa:hover{
+            display: none;
+        }
+    }
+}
+
+
+
+@function calcSum($a,$b){
+    @return $a+$b;
+}
+
+@function calcRem($pixel) {
+    @return math.div($pixel, 16);
+}
+
+.Kazim{
+    width: calcSum(250px, 350px);
+}
+
+.muhammed{
+    @extend .Kazim;
+}
+
+@function isBiggerThan5($param){
+    @if $param > 5{
+        @return true;
+    }
+    @else{
+        @return false;
+    }
+}
+
+
+.deneme{
+    @if isBiggerThan5(8){
+        background-color: red;
+    }
+    @else{
+        background-color: blue;
+    }
+}
+
+
+
+/*
+mixin tanimla
+bunu 3 classta include et
+
+daha sonra bu 3 classi da extend eden farkli bir class yaz
+
+*/
+
+@mixin GridBox {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.deneme1 {
+    @include GridBox;
+}
+.deneme2 {
+    @include GridBox;
+}
+.deneme3 {
+    @include GridBox;
+}
+
+.deneme4 {
+    @extend .deneme1, .deneme2, .deneme3;
+}
+
+
+ul{
+    @for $i from 1 to 10{
+        $id : "item-#{$i}";
+        .#{$id}{
+            @if $i %2 ==0{
+                background-color: red;
+
+            }
+            @else{
+                background-color: blue;
+            }
+        }
+    }
+}
+
+
+ul{
+    @for $i from 1 through 10 {
+        li:nth-child(#{$i}) {
+            @if ($i%2==0) {
+                background-color: red;
+            }
+            @else{
+                background-color: white;
+            } 
+        }
+      }
+}
+
+/* 
+
+create function that takers a px parametes a and b, as a result return a + b;
+
+use that function for class yakisikliKazim and add width with that function.
+then extend this class with yakisikliAbdullah.
+
+
+*/
+@function sum($a,$b){
+    @return $a+$b;
+}
+.yakisikliKazim{
+    width: sum(200,100px);
+}
+
+.yakisikliAbdullah{
+    @extend .yakisikliKazim;
+}
+
+
+
+/*
+Kazim
+
+write a function that takes a parameter px.
+if value is bigger than 750 return 300
+if value is bigger than 500 return 200
+else return 100
+
+*/
+
+
+@function isBigger($a){
+    @if($a>750){
+        @return 300;
+    }
+    @else if($a>500){
+        @return 200;
+    }
+    @else{
+        @return 100;
+    }
+}
+
+.kazim {
+    width: isBigger(800);
+}
