@@ -5,7 +5,7 @@ sass input.scss output.css
 sass --watch input.scss:output.css
 
 */
-.a {
+.a, .c {
   background-color: red;
   color: blue;
 }
@@ -143,6 +143,639 @@ else return 100
 */
 .kazim {
   width: 300;
+}
+
+/*
+
+2 adet mixin tanimlayin, daha sonra bu mixinler ic ice olan iki classa da ekleyin.
+.a{
+ include d1 ve d2
+}
+.a .b{
+ include d1 ve d2
+
+}
+
+
+daha sonra c classi yaratip. c classini .a classindan extendleyin. 
+
+daha sonra c clasinin icinde .fs-1rem - 2 -3 -4 diye giderek 50 adet ic classlar olusturun ve
+
+id %5 0 sa beyaz background, degilse red background olsun.
+
+.c{
+    a 
+    for 50 sub class
+}
+*/
+.a, .c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.a .b, .c .b {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+}
+
+.c .fs-1rem {
+  background-color: red;
+}
+.c .fs-2rem {
+  background-color: red;
+}
+.c .fs-3rem {
+  background-color: red;
+}
+.c .fs-4rem {
+  background-color: red;
+}
+.c .fs-5rem {
+  background-color: white;
+}
+.c .fs-6rem {
+  background-color: red;
+}
+.c .fs-7rem {
+  background-color: red;
+}
+.c .fs-8rem {
+  background-color: red;
+}
+.c .fs-9rem {
+  background-color: red;
+}
+.c .fs-10rem {
+  background-color: white;
+}
+.c .fs-11rem {
+  background-color: red;
+}
+.c .fs-12rem {
+  background-color: red;
+}
+.c .fs-13rem {
+  background-color: red;
+}
+.c .fs-14rem {
+  background-color: red;
+}
+.c .fs-15rem {
+  background-color: white;
+}
+.c .fs-16rem {
+  background-color: red;
+}
+.c .fs-17rem {
+  background-color: red;
+}
+.c .fs-18rem {
+  background-color: red;
+}
+.c .fs-19rem {
+  background-color: red;
+}
+.c .fs-20rem {
+  background-color: white;
+}
+.c .fs-21rem {
+  background-color: red;
+}
+.c .fs-22rem {
+  background-color: red;
+}
+.c .fs-23rem {
+  background-color: red;
+}
+.c .fs-24rem {
+  background-color: red;
+}
+.c .fs-25rem {
+  background-color: white;
+}
+.c .fs-26rem {
+  background-color: red;
+}
+.c .fs-27rem {
+  background-color: red;
+}
+.c .fs-28rem {
+  background-color: red;
+}
+.c .fs-29rem {
+  background-color: red;
+}
+.c .fs-30rem {
+  background-color: white;
+}
+.c .fs-31rem {
+  background-color: red;
+}
+.c .fs-32rem {
+  background-color: red;
+}
+.c .fs-33rem {
+  background-color: red;
+}
+.c .fs-34rem {
+  background-color: red;
+}
+.c .fs-35rem {
+  background-color: white;
+}
+.c .fs-36rem {
+  background-color: red;
+}
+.c .fs-37rem {
+  background-color: red;
+}
+.c .fs-38rem {
+  background-color: red;
+}
+.c .fs-39rem {
+  background-color: red;
+}
+.c .fs-40rem {
+  background-color: white;
+}
+.c .fs-41rem {
+  background-color: red;
+}
+.c .fs-42rem {
+  background-color: red;
+}
+.c .fs-43rem {
+  background-color: red;
+}
+.c .fs-44rem {
+  background-color: red;
+}
+.c .fs-45rem {
+  background-color: white;
+}
+.c .fs-46rem {
+  background-color: red;
+}
+.c .fs-47rem {
+  background-color: red;
+}
+.c .fs-48rem {
+  background-color: red;
+}
+.c .fs-49rem {
+  background-color: red;
+}
+
+.a, .c {
+  background-color: #f0f0f0;
+  font-size: 22px;
+}
+.a .b, .c .b {
+  background-color: #f0f0f0;
+  font-size: 22px;
+}
+
+.c .f2-1rem-1 {
+  background-color: red;
+}
+.c .f2-1rem-2 {
+  background-color: red;
+}
+.c .f2-1rem-3 {
+  background-color: red;
+}
+.c .f2-1rem-4 {
+  background-color: red;
+}
+.c .f2-1rem-5 {
+  background-color: white;
+}
+.c .f2-1rem-6 {
+  background-color: red;
+}
+.c .f2-1rem-7 {
+  background-color: red;
+}
+.c .f2-1rem-8 {
+  background-color: red;
+}
+.c .f2-1rem-9 {
+  background-color: red;
+}
+.c .f2-1rem-10 {
+  background-color: white;
+}
+.c .f2-1rem-11 {
+  background-color: red;
+}
+.c .f2-1rem-12 {
+  background-color: red;
+}
+.c .f2-1rem-13 {
+  background-color: red;
+}
+.c .f2-1rem-14 {
+  background-color: red;
+}
+.c .f2-1rem-15 {
+  background-color: white;
+}
+.c .f2-1rem-16 {
+  background-color: red;
+}
+.c .f2-1rem-17 {
+  background-color: red;
+}
+.c .f2-1rem-18 {
+  background-color: red;
+}
+.c .f2-1rem-19 {
+  background-color: red;
+}
+.c .f2-1rem-20 {
+  background-color: white;
+}
+.c .f2-1rem-21 {
+  background-color: red;
+}
+.c .f2-1rem-22 {
+  background-color: red;
+}
+.c .f2-1rem-23 {
+  background-color: red;
+}
+.c .f2-1rem-24 {
+  background-color: red;
+}
+.c .f2-1rem-25 {
+  background-color: white;
+}
+.c .f2-1rem-26 {
+  background-color: red;
+}
+.c .f2-1rem-27 {
+  background-color: red;
+}
+.c .f2-1rem-28 {
+  background-color: red;
+}
+.c .f2-1rem-29 {
+  background-color: red;
+}
+.c .f2-1rem-30 {
+  background-color: white;
+}
+.c .f2-1rem-31 {
+  background-color: red;
+}
+.c .f2-1rem-32 {
+  background-color: red;
+}
+.c .f2-1rem-33 {
+  background-color: red;
+}
+.c .f2-1rem-34 {
+  background-color: red;
+}
+.c .f2-1rem-35 {
+  background-color: white;
+}
+.c .f2-1rem-36 {
+  background-color: red;
+}
+.c .f2-1rem-37 {
+  background-color: red;
+}
+.c .f2-1rem-38 {
+  background-color: red;
+}
+.c .f2-1rem-39 {
+  background-color: red;
+}
+.c .f2-1rem-40 {
+  background-color: white;
+}
+.c .f2-1rem-41 {
+  background-color: red;
+}
+.c .f2-1rem-42 {
+  background-color: red;
+}
+.c .f2-1rem-43 {
+  background-color: red;
+}
+.c .f2-1rem-44 {
+  background-color: red;
+}
+.c .f2-1rem-45 {
+  background-color: white;
+}
+.c .f2-1rem-46 {
+  background-color: red;
+}
+.c .f2-1rem-47 {
+  background-color: red;
+}
+.c .f2-1rem-48 {
+  background-color: red;
+}
+.c .f2-1rem-49 {
+  background-color: red;
+}
+
+/*Abdullah*/
+.a, .c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.a .b, .c .b {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.c .fs-1rem {
+  background-color: red;
+}
+.c .fs-2rem {
+  background-color: red;
+}
+.c .fs-3rem {
+  background-color: red;
+}
+.c .fs-4rem {
+  background-color: red;
+}
+.c .fs-5rem {
+  background-color: white;
+}
+.c .fs-6rem {
+  background-color: red;
+}
+.c .fs-7rem {
+  background-color: red;
+}
+.c .fs-8rem {
+  background-color: red;
+}
+.c .fs-9rem {
+  background-color: red;
+}
+.c .fs-10rem {
+  background-color: white;
+}
+.c .fs-11rem {
+  background-color: red;
+}
+.c .fs-12rem {
+  background-color: red;
+}
+.c .fs-13rem {
+  background-color: red;
+}
+.c .fs-14rem {
+  background-color: red;
+}
+.c .fs-15rem {
+  background-color: white;
+}
+.c .fs-16rem {
+  background-color: red;
+}
+.c .fs-17rem {
+  background-color: red;
+}
+.c .fs-18rem {
+  background-color: red;
+}
+.c .fs-19rem {
+  background-color: red;
+}
+.c .fs-20rem {
+  background-color: white;
+}
+.c .fs-21rem {
+  background-color: red;
+}
+.c .fs-22rem {
+  background-color: red;
+}
+.c .fs-23rem {
+  background-color: red;
+}
+.c .fs-24rem {
+  background-color: red;
+}
+.c .fs-25rem {
+  background-color: white;
+}
+.c .fs-26rem {
+  background-color: red;
+}
+.c .fs-27rem {
+  background-color: red;
+}
+.c .fs-28rem {
+  background-color: red;
+}
+.c .fs-29rem {
+  background-color: red;
+}
+.c .fs-30rem {
+  background-color: white;
+}
+.c .fs-31rem {
+  background-color: red;
+}
+.c .fs-32rem {
+  background-color: red;
+}
+.c .fs-33rem {
+  background-color: red;
+}
+.c .fs-34rem {
+  background-color: red;
+}
+.c .fs-35rem {
+  background-color: white;
+}
+.c .fs-36rem {
+  background-color: red;
+}
+.c .fs-37rem {
+  background-color: red;
+}
+.c .fs-38rem {
+  background-color: red;
+}
+.c .fs-39rem {
+  background-color: red;
+}
+.c .fs-40rem {
+  background-color: white;
+}
+.c .fs-41rem {
+  background-color: red;
+}
+.c .fs-42rem {
+  background-color: red;
+}
+.c .fs-43rem {
+  background-color: red;
+}
+.c .fs-44rem {
+  background-color: red;
+}
+.c .fs-45rem {
+  background-color: white;
+}
+.c .fs-46rem {
+  background-color: red;
+}
+.c .fs-47rem {
+  background-color: red;
+}
+.c .fs-48rem {
+  background-color: red;
+}
+.c .fs-49rem {
+  background-color: red;
+}
+
+/*
+
+2 adet ayri function olsun
+
+biri width yada height olarak parametre
+
+function f1(param,param2){//param = string,param2 = number
+  eger width gelirse return param2*7;
+  else return param2*2
+}
+
+function f2(param){//number
+  param %5 0 sa "block"
+  1 se "flex"
+  2 ise "grid"
+  3 se "inline"
+  4 se "contents"
+}
+
+$temp : f1("width",25);
+$temp2: f2(temp);
+
+
+.Abdullah{
+  display : $temp2;
+}
+
+*/
+.Kazim, .muhammed {
+  display: block;
+}
+
+.Muhammed {
+  display: grid;
+}
+
+.Abdullah {
+  display: flex;
+}
+
+/*
+You are working on the front-end development of a blog website. 
+Your task is to create a set of styles using SCSS to ensure a consistent and 
+visually appealing design. The design requirements include rounded borders, 
+dynamic font sizing for headings, handling error states, and converting units. 
+Use the following scenario to complete the task:
+
+  Variables:
+
+  Define a variable named $primary-color and set it to #007bff, 
+  which represents the primary color of the website.
+  Create a variable named $border-radius and set it to 5px.
+  Mixins:
+
+  Design a mixin named box-shadow that takes two parameters: $x-offset and $y-offset. 
+  Apply this mixin to style a div with the class .featured-box to have a box shadow with 
+  the values 4px for the horizontal offset and 6px for the vertical offset.
+  Functions:
+
+  Develop an SCSS function called rem that converts pixel values to rem units 
+  based on a base font size of 16px. Use this function to set the font size of a p 
+  element with the class .content to 18px in rem units.
+  Loops:
+
+  Create an SCSS loop that generates styles for heading elements (h1 to h4) with 
+  font sizes increasing by 2px for each heading level. Apply these styles to the 
+  respective heading elements.
+  If Statements:
+
+  Implement an if statement to handle an error state for buttons. 
+  Create a button with the class .cta-button. If the variable $error is set to true, 
+  change the background color of the button to red; otherwise, keep the primary color.
+  Main Styles:
+
+  Set the body background color to a light gray color (#f8f9fa).
+  Apply the box-shadow mixin to the .featured-box element.
+  Use the rem function to set the margin of the .content element to 10px.
+
+*/
+.button {
+  border-radius: 5px;
+}
+
+body {
+  background-color: #f8f9fa;
+}
+
+.featured-box {
+  box-shadow: 4px 6px red;
+}
+
+p.content {
+  font-size: 1.125px;
+}
+
+.content {
+  margin: 0.625px;
+}
+
+.h1 {
+  font-size: 17px;
+}
+
+.h2 {
+  font-size: 19px;
+}
+
+.h3 {
+  font-size: 21px;
+}
+
+.h4 {
+  font-size: 23px;
+}
+
+.cta-button {
+  background-color: #007bff;
+  background-color: red;
+}
+
+p {
+  font-size: 1.125;
 }
 
 /*# sourceMappingURL=output.css.map */

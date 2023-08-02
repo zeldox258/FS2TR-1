@@ -187,3 +187,368 @@ else return 100
 .kazim {
     width: isBigger(800);
 }
+
+
+
+/*
+
+2 adet mixin tanimlayin, daha sonra bu mixinler ic ice olan iki classa da ekleyin.
+.a{
+ include d1 ve d2
+}
+.a .b{
+ include d1 ve d2
+
+}
+
+
+daha sonra c classi yaratip. c classini .a classindan extendleyin. 
+
+daha sonra c clasinin icinde .fs-1rem - 2 -3 -4 diye giderek 50 adet ic classlar olusturun ve
+
+id %5 0 sa beyaz background, degilse red background olsun.
+
+.c{
+    a 
+    for 50 sub class
+}
+*/
+
+
+@mixin flexBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin gridBox {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+}
+
+.a {
+    @include flexBox;
+    .b {
+        @include gridBox;
+    }
+}
+
+.c {
+    @extend .a;
+    @for $i from 1 to 50 {
+        $id : "fs-#{$i}rem";
+        .#{$id}{
+            @if $i % 5 == 0 {
+                background-color: white;
+            }
+            @else{
+                background-color: red;
+            }
+        }
+    }
+}
+
+
+
+@mixin d1 {
+    background-color: #f0f0f0;
+}
+
+@mixin d2 {
+    font-size: 22px;
+}
+
+.a {
+    @include d1;
+    @include d2;
+
+    .b {
+        @include d1;
+        @include d2;
+    }
+}
+
+.c{
+    @extend .a;
+
+     @for $i from 1 to 50{
+        $class : "f2-1rem-#{$i}";
+        .#{$class}{
+            @if $i %5 ==0{
+                background-color: white;
+
+            }
+            @else{
+                background-color: red;
+            }
+        }
+    }
+}
+
+/*Abdullah*/
+
+@mixin d1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  @mixin d2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .a {
+    @include d1();
+    @include d2();
+    .b{
+        @include d1();
+        @include d2();
+    }
+  }
+
+  .c {
+    @extend .a;
+  
+    @for $i from 1 to 50 {
+      .fs-#{$i}rem {
+        @if ($i%5==0) {
+          background-color: white;
+        } @else {
+          background-color: red;
+        }
+      }
+    }
+  }
+
+
+  /*
+
+  2 adet ayri function olsun
+
+  biri width yada height olarak parametre
+
+  function f1(param,param2){//param = string,param2 = number
+    eger width gelirse return param2*7;
+    else return param2*2
+  }
+
+  function f2(param){//number
+    param %5 0 sa "block"
+    1 se "flex"
+    2 ise "grid"
+    3 se "inline"
+    4 se "contents"
+  }
+
+  $temp : f1("width",25);
+  $temp2: f2(temp);
+  
+
+  .Abdullah{
+    display : $temp2;
+  }
+
+  */
+
+
+@function f1($param, $param2) {
+    @if($param=="width") {
+        @return $param2*7;
+    }
+
+    @return $param2*2;
+}
+
+@function f2($param) {
+    $result : ($param % 5);
+
+    @if($result==0) {
+        @return block;
+    }
+
+    @if($result==1) {
+        @return flex;
+    }
+
+    @if($result==2) {
+        @return grid;
+    }
+
+    @if($result==3) {
+        @return inline;
+    }
+
+    @if($result==4) {
+        @return contents;
+    }
+}
+
+$temp : f1("width", 25);
+$temp2: f2($temp);
+
+.Kazim {
+    display: $temp2;
+}
+
+
+@function Muhf1($param, $param2) {
+    @if $param == "width" {
+        @return $param2 * 7;
+    } @else {
+        @return $param2 * 2;
+    }
+}
+
+@function Muhf2($param) {
+    @if $param % 5 == 0 {
+        @return block;
+    } @else if $param % 5 == 1 {
+        @return flex;
+    } @else if $param % 5 == 2 {
+        @return grid;
+    } @else if $param % 5 == 3 {
+        @return inline;
+    } @else if $param % 5 == 4 {
+        @return contents;
+    }
+
+}
+
+$temp : Muhf1("width", 21);
+$temp2: Muhf2($temp);
+
+.Muhammed {
+    display: $temp2;
+}
+
+
+
+@function f1($param, $param2) {
+    @if ($param == "width") {
+      @return $param2 * 7;
+    } @else {
+      @return $param2 * 2;
+    }
+  }
+  @function f2($param){
+    $x: $param % 5;
+    @if($x == 0){
+      @return block;
+    } @else if ($x == 1 ){
+      @return flex;
+    } @else if ($x == 2 ){
+      @return grid;
+    } @else if ($x == 3 ){
+      @return  inline;
+    } @else if ($x == 4 ){
+      @return contents;
+    }
+  }
+  
+  $temp : f1("width",28);
+  $temp2: f2($temp);
+  
+  
+  .Abdullah{
+    display : $temp2;
+  }
+
+
+
+
+  /*
+  You are working on the front-end development of a blog website. 
+  Your task is to create a set of styles using SCSS to ensure a consistent and 
+  visually appealing design. The design requirements include rounded borders, 
+  dynamic font sizing for headings, handling error states, and converting units. 
+  Use the following scenario to complete the task:
+
+    Variables:
+
+    Define a variable named $primary-color and set it to #007bff, 
+    which represents the primary color of the website.
+    Create a variable named $border-radius and set it to 5px.
+    Mixins:
+
+    Design a mixin named box-shadow that takes two parameters: $x-offset and $y-offset. 
+    Apply this mixin to style a div with the class .featured-box to have a box shadow with 
+    the values 4px for the horizontal offset and 6px for the vertical offset.
+    Functions:
+
+    Develop an SCSS function called rem that converts pixel values to rem units 
+    based on a base font size of 16px. Use this function to set the font size of a p 
+    element with the class .content to 18px in rem units.
+    Loops:
+
+    Create an SCSS loop that generates styles for heading elements (h1 to h4) with 
+    font sizes increasing by 2px for each heading level. Apply these styles to the 
+    respective heading elements.
+    If Statements:
+
+    Implement an if statement to handle an error state for buttons. 
+    Create a button with the class .cta-button. If the variable $error is set to true, 
+    change the background color of the button to red; otherwise, keep the primary color.
+    Main Styles:
+
+    Set the body background color to a light gray color (#f8f9fa).
+    Apply the box-shadow mixin to the .featured-box element.
+    Use the rem function to set the margin of the .content element to 10px.
+  
+  */
+
+@mixin rounded-border($radius) {
+    border-radius: $radius;
+}
+
+.button {
+    @include rounded-border(5px);   
+}
+  
+$primary-color:#007bff;
+$border-radius: 5px;
+
+body{
+    background-color: #f8f9fa;
+}
+
+@mixin box-shadow($x-offset,$y-offset){
+    box-shadow: $x-offset $y-offset red;
+}
+
+.featured-box{
+    @include box-shadow(4px, 6px);
+}
+
+@function rem($px){
+    @return math.div($px, 16);
+}
+
+p.content{
+    font-size: rem(18px);
+}
+
+.content{
+    margin: rem(10px);
+}
+
+@for $i from 1 through 4 {
+    .h#{$i}{
+        font-size: 15px + $i * 2px;
+    }
+}
+
+.cta-button{
+    background-color: $primary-color;
+    $error:true;
+    @if $error{
+        background-color: red;
+    }
+}
+
+p{
+    font-size: rem(18);
+}
